@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ dest.place }} Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://static.vecteezy.com/system/resources/thumbnails/047/430/817/small/digital-online-payment-concept-business-with-online-payment-and-shopping-online-payment-banking-online-money-transfer-confirmed-concept-online-banking-payment-transfer-photo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #ffdd57;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            margin-top: 30px;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #ffdd57;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e6c842;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ dest.place }} – {{ package }} Package</h2>
+
+        <p><strong>🍽 Food Cost:</strong> ₹{{ dest.food }}</p>
+        <p><strong>🚌 Travel Cost:</strong> ₹{{ dest.travel }}</p>
+        <p><strong>🏨 Accommodation Cost:</strong> ₹{{ dest.stay }}</p>
+
+        <form action="/payment" method="POST">
+            <input type="hidden" name="region" value="{{ region }}">
+            <input type="hidden" name="package" value="{{ package }}">
+            <input type="hidden" name="place" value="{{ dest.place }}">
+            <input type="hidden" name="food" value="{{ dest.food }}">
+            <input type="hidden" name="travel" value="{{ dest.travel }}">
+            <input type="hidden" name="stay" value="{{ dest.stay }}">
+
+            <label for="persons">👤 Number of Persons:</label>
+            <input type="number" name="persons" id="persons" value="1" min="1" required>
+
+            <input type="submit" value="Confirm">
+        </form>
+    </div>
+</body>
+</html>

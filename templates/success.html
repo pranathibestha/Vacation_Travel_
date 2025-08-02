@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/male-hand-holding-mobile-phone-with-payment-app-interface-showing-payment-successful-message-with-green-check-mark-credit-card-background-online-shopping-mobile-banking-transactions_136766-196.jpg?w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #2f4f4f;
+            text-align: center;
+            padding-top: 100px;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            display: inline-block;
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #198754;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Successful ✅</h2>
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Host:</strong> {{ host }}</p>
+        <p><strong>Phone:</strong> {{ phone }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+
+        <hr>
+
+        <p><strong>Booked Place:</strong> {{ booking.place }}</p>
+        <p><strong>Total Cost:</strong> ₹<span class="highlight">{{ booking.total }}</span></p>
+
+        <p>🎉 A confirmation email has been sent to your inbox.</p>
+    </div>
+</body>
+</html>
+

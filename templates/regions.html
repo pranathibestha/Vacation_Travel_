@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select a Region</title>
+    <style>
+        body {
+            background-image: url("https://png.pngtree.com/background/20250203/original/pngtree-discover-the-vibrant-beauty-of-thailand-a-guide-for-tourists-s-picture-image_15779021.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        }
+        .region-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .region-card {
+            width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 4px solid white;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            background-color: white;
+        }
+        .region-card:hover {
+            transform: scale(1.06);
+            border-color: #ffc107;
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+        }
+        .region-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .region-label {
+            margin-top: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select a Region</h2>
+    <div class="region-container">
+
+        <!-- First Row -->
+        <div class="row">
+            <a href="/packages/North India">
+                <div class="region-card">
+                    <img src="https://www.tourmyindia.com/socialimg/north-india-tourism.jpg" alt="North India">
+                </div>
+                <div class="region-label">North India</div>
+            </a>
+
+            <a href="/packages/South India">
+                <div class="region-card">
+                    <img src="https://www.stayvista.com/blog/wp-content/uploads/2023/11/nature-photographer-29ezCWtMtnM-unsplash-1-scaled-1.jpg" alt="South India">
+                </div>
+                <div class="region-label">South India</div>
+            </a>
+
+            <a href="/packages/East India">
+                <div class="region-card">
+                    <img src="https://www.nativeplanet.com/img/2014/05/28-puri1.jpg" alt="East India">
+                </div>
+                <div class="region-label">East India</div>
+            </a>
+
+            <a href="/packages/West India">
+                <div class="region-card">
+                    <img src="https://dcvrfpttsu6tk.cloudfront.net/images/packages/images/2019-03-04-15-31-07-5c7d44bbd0bad-udaipur.jpg" alt="West India">
+                </div>
+                <div class="region-label">West India</div>
+            </a>
+        </div>
+
+        <!-- Second Row -->
+        <div class="row">
+            <a href="/packages/Central India">
+                <div class="region-card">
+                    <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/05/Waterfalls-in-India_60.jpg:cf-webp:w-450:h-240" alt="Central India">
+                </div>
+                <div class="region-label">Central India</div>
+            </a>
+
+            <a href="/packages/Northeast India">
+                <div class="region-card">
+                    <img src="https://www.indiantempletour.com/wp-content/uploads/2022/08/north-east.jpg" alt="Northeast India">
+                </div>
+                <div class="region-label">Northeast India</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+

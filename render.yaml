@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: travel_project1
+    name: travel_project_
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt

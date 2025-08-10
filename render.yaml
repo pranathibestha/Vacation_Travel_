@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: travel-planner-app
+    name: travell
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt

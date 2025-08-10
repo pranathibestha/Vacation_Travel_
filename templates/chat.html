@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Chat with TravelBot</h2>
+    <div id="chatbox" style="border:1px solid #ccc; padding:10px; width:400px; height:300px; overflow-y:auto;"></div>
+    <input type="text" id="userInput" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            var userText = $("#userInput").val();
+            $("#chatbox").append("<div><b>You:</b> " + userText + "</div>");
+            $.post("/get", { msg: userText }, function(data) {
+                $("#chatbox").append("<div><b>Bot:</b> " + data.response + "</div>");
+                $("#userInput").val("");
+                $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
+            });
+        }
+    </script>
+</body>
+</html>

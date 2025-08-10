@@ -306,6 +306,22 @@ def confirm():
                            name=session['name'],
                            email=session['email'],
                            booking=session['selected'])
+@app.route('/get', methods=['POST'])
+def chatbot_reply():
+    user_message = request.json.get("message")
+    # Simple rule-based logic (can be extended)
+    if "hello" in user_message.lower():
+        reply = "Hello! How can I assist you with your travel plans today?"
+    elif "package" in user_message.lower():
+        reply = "We offer both Budget and Luxury packages across India. Visit the regions page after login to explore."
+    elif "price" in user_message.lower() or "cost" in user_message.lower():
+        reply = "Each package cost includes travel, food, and stay, and is shown per person. You can check the breakdown on the package detail page."
+    elif "email" in user_message.lower():
+        reply = "After payment, you'll get a confirmation email with all booking details."
+    else:
+        reply = "I'm here to help! Please ask about destinations, packages, or booking steps."
+    return jsonify({"response": reply})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

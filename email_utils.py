@@ -2,8 +2,8 @@ import smtplib
 from email.mime.text import MIMEText
 
 def send_confirmation_email(to, name, place, total):
-    sender = "224g1a0571@srit.ac.in"
-    password = "224g1a057109"
+    sender = "pranathibestha@gmail.com"
+    password = "pranathi@123"
 
     msg = MIMEText(f"""
 Hello {name},

@@ -1,10 +1,11 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from email_utils import send_confirmation_email
 
 app = Flask(__name__)
-app.secret_key = 'travel_secret_key'
+app.secret_key = os.environ.get("SECRET_KEY", "dev-only-change-me")
 
 # Database configuration
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///planner.db"

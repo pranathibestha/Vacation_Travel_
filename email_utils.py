@@ -1,9 +1,10 @@
+import os
 import smtplib
 from email.mime.text import MIMEText
 
 def send_confirmation_email(to, name, place, total):
-    sender = "pranathibestha@gmail.com"
-    password = "pranathi@123"
+    sender = os.environ.get("EMAIL_USER")
+    password = os.environ.get("EMAIL_PASSWORD")  # Gmail App Password, set as an environment variable
 
     msg = MIMEText(f"""
 Hello {name},
